@@ -6,7 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Product Page</title>
     <style>
-    body {
+        .tyContainer {
+            border: 2px solid white;
+            width: 100px;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .tyLeftSide {
+            left: 0;
+            top: 10vh;
+        }
+
+        .tyContainer div {
+            border: 1px solid white;
+            color: white;
+            background-color: black;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tyContainer a div:hover {
+            background-color: #f44336;
+        }
+
+        .tyContainer a {
+            text-decoration: none;
+        }
+
+        .tyContainer .tyTitle {
+            background-color: gray;
+            height: 50px;
+        }
+
+
+
+
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -73,7 +112,7 @@
 
         /* 預設顯示中文文字 */
         .nav-item-en {
-        display: none;
+            display: none;
         }
 
         /* 懸停時顯示英文文字 */
@@ -87,7 +126,7 @@
 
         /* 隱藏中文文字 */
         .nav-item:hover .nav-item-cn {
-        display: none;
+            display: none;
         }
 
         body {
@@ -111,7 +150,7 @@
         }
 
         .product-item {
-            width: 20%; 
+            width: 20%;
             /* 調整圖片大小 */
             margin: 10px;
             overflow: hidden;
@@ -151,7 +190,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            background-color:rgba(255, 255, 255, 0.911);
+            background-color: rgba(255, 255, 255, 0.911);
             color: rgb(217, 126, 156);
             padding: 5px 10px;
             border-radius: 5px;
@@ -206,42 +245,56 @@
             /* 調整icon圖示的高度，使其大小一致 */
             margin-right: 1px;
             /* 調整icon圖示和文字之間的間距 */
-            vertical-align: middle; 
+            vertical-align: middle;
             /* 使圖示和文字在垂直方向上居中對齊 */
         }
     </style>
 </head>
 
 <body>
+    <div class="tyContainer tyLeftSide">
+        <div class="tyTitle">快速查詢</div>
+        <a href="#">
+            <div>機票資訊</div>
+        </a>
+        <a href="#">
+            <div>訂房資訊</div>
+        </a>
+        <a href="#">
+            <div>租車資訊</div>
+        </a>
+    </div>
+
+
 
     <header>
         <a href="首頁.html">
-        <img src="img/LOGO.png" alt="Logo" title="1nonly 巧克力專賣" style="max-width: 200px;">
+            <img src="img/LOGO.png" alt="Logo" title="1nonly 巧克力專賣" style="max-width: 200px;">
         </a>
     </header>
 
     <nav>
-    <a href="品牌概念.html" class="nav-item">
-        <span class="nav-item-cn">品 牌 概 念</span>
-        <span class="nav-item-en">About Us</span>
-    </a>
-    <a href="商品頁_生巧克力.html" class="nav-item">
-        <span class="nav-item-cn">生 巧 克 力</span>
-        <span class="nav-item-en">Black Chocolate</span>
-    </a>
-    <a href="商品頁_黑蛋糕.html" class="nav-item">
-        <span class="nav-item-cn">黑 蛋 糕</span>
-        <span class="nav-item-en">Black Cake</span>
-    </a>
-    <a href="商品頁_黑餅乾.html" class="nav-item">
-        <span class="nav-item-cn">黑 餅 乾</span>
-        <span class="nav-item-en">Black Cookie</span>
-    </a>
-    <a href="商品頁_靈魂搭配.html" class="nav-item">
-        <span class="nav-item-cn">靈 魂 搭 配</span>
-        <span class="nav-item-en">Soulmate</span>
-    </a>
-</nav>
+        <a href="品牌概念.html" class="nav-item">
+            <span class="nav-item-cn">品 牌 概 念</span>
+            <span class="nav-item-en">About Us</span>
+        </a>
+        <a href="商品頁_生巧克力.html" class="nav-item">
+            <span class="nav-item-cn">生 巧 克 力</span>
+            <span class="nav-item-en">Black Chocolate</span>
+        </a>
+        <a href="商品頁_黑蛋糕.html" class="nav-item">
+            <span class="nav-item-cn">黑 蛋 糕</span>
+            <span class="nav-item-en">Black Cake</span>
+        </a>
+        <a href="商品頁_黑餅乾.html" class="nav-item">
+            <span class="nav-item-cn">黑 餅 乾</span>
+            <span class="nav-item-en">Black Cookie</span>
+        </a>
+        <a href="商品頁_靈魂搭配.html" class="nav-item">
+            <span class="nav-item-cn">靈 魂 搭 配</span>
+            <span class="nav-item-en">Soulmate</span>
+        </a>
+    </nav>
 
     <div class="product-container">
         <!-- Product 1 -->
@@ -396,7 +449,8 @@
             <div class="footer-section">
                 <h2>Social Media</h2>
                 <ul>
-                    <li><img src="img/iconFbacebook.png" alt="Facebook"><a href="https://www.facebook.com/">Facebook</a></li>
+                    <li><img src="img/iconFbacebook.png" alt="Facebook"><a href="https://www.facebook.com/">Facebook</a>
+                    </li>
                     <li><img src="img/iconTwitter.png" alt="Twitter"><a href="https://twitter.com/home">Twitter</a></li>
                     <li><img src="img/iconYoutube.png" alt="Youtube"><a href="https://www.youtube.com/">Youtube</a></li>
                 </ul>
