@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入頁面</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+        }
+        body{
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            height: 100vh;
+            margin:0;
+            background-image: url(img/wallpaper_01.jpg);
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+        .login{
+            width: 450px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(
+                to right bottom,
+                rgba(255,255,255,.7),
+                rgba(255,255,255,.5),
+                rgba(255,255,255,.4)
+            );
+            backdrop-filter:blur(5px);
+            box-shadow: 0 0 40px #a29bfe;
+            border-radius: 40px;
+        }
+
+        .table{
+            font: 900 60px '';
+            text-align: center;
+            letter-spacing: 10px;
+            color:#3d3d3d;
+        }
+
+        .box{
+            overflow:hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box input{
+            width: 300px;
+            height: 100%;
+            margin-bottom: 20px;
+            outline: none;
+            border: 0;
+            padding: 10px;
+            background-color: transparent;
+            border-bottom: 3px solid rgb(150, 150, 240);
+            font: 900 20px '';
+        }
+
+        .go{
+            text-align:center;
+            display:block;
+            height: 24px;
+            padding: 12px;
+            font: 900 20px '';
+            border-radius: 30px;
+            margin-top: 30px;
+            color: #fff;
+            letter-spacing: 3px;
+            background-image: linear-gradient(to left,
+            #fd79a8,#a29bf6);
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="box">
+            <p class="table">Login</p>
+            <br>
+            <input type="text" placeholder="ID">
+            <input type="password" placeholder="PASSWORD">
+            <br>
+            <a href="#" class="go">GO</a>
+        </div>
+    </div>
+</body>
+</html> 

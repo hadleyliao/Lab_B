@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(164, 170, 206);
+        }
+
+        .wrap {
+            width: 1200px;
+            margin-top: 50px;
+        }
+
+        .wrap::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 10px;
+            z-index: -999;
+            height: 100%;
+            background-color: rgb(111, 80, 139);
+            transform: translateX(-50%);
+        }
+
+        .box {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left, .right {
+            position: relative;
+            width: 50%;
+            height: 140px;
+            border-radius: 20px;
+            text-align: center;
+            color: rgb(90, 90, 90);
+            font-size: 28px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent; /* 設為透明 */
+        }
+
+        .box:nth-child(even) .left {
+            background-color: rgba(255, 255, 255, .4);
+        }
+
+        .box:nth-child(odd) .right {
+            background-color: rgba(255, 255, 255, .4);
+        }
+
+        .center {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center>span {
+            width: 280px;
+            border-radius: 50px;
+            text-align: center;
+            font: 900 35px 'Arial', sans-serif;
+            line-height: 30px;
+            background-color: #976bc0;
+            color: #fff;
+            padding: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box">
+            <div class="left"></div>
+            <div class="center"><span>
+                2023/11/27 Week 1
+            </span></div>
+            <div class="right">
+                ...毫無頭緒...<br>
+                ...有點想法...<br>
+                ...想法混亂...<br>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="left">
+                網頁主題、分頁內容構思<br>
+                Lab課嘗試實作
+            </div>
+            <div class="center"><span>
+                2023/12/04 Week 2
+            </span></div>
+            <div class="right"></div>
+        </div>
+
+        <div class="box">
+            <div class="left"></div>
+            <div class="center"><span>
+                2023/12/11 Week 3
+            </span></div>
+            <div class="right">
+                G_G...砍掉重練...<br>
+                Q_Q...重新構思...<br>
+                X_X...嘗試實作...<br>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="left">
+                主題確定<br>
+                產出中<br>
+                測試 + 修理bug<br>
+            </div>
+            <div class="center"><span>
+                2023/12/18 Week 4
+            </span></div>
+            <div class="right"></div>
+        </div>
+
+        <div class="box">
+            <div class="left"></div>
+            <div class="center"><span>
+                2023/12/25 Week 5
+            </span></div>
+            <div class="right">
+                最後測試<br>
+                小專發表
+            </div>
+        </div>
+    </div>
+</body>
+</html>

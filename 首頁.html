@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow-x: hidden;
+        }
+
+        .login-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background-color: transparent; /* 背景顏色這裡設置為透明，你可以根據需要設置其他顏色 */
+  z-index: 999; /* 設置一個足夠大的 z-index 值 */
+}
+
+.login-button {
+  background-color: #e475a9f1;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+        header {
+            color: #fff;
+            text-align: center;
+            padding: 50px 0;
+            animation: scaleFlicker 1.5s infinite alternate;
+        }
+
+        @keyframes scaleFlicker {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        header img {
+            width: 350px;
+            height: auto;
+            text-align: center;
+            max-width: 300px;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        header img:hover {
+            transform: scale(2.0);
+            filter: brightness(1.0);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 50px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: chocolate;
+        }
+
+        /* 預設顯示中文文字 */
+        .nav-item-en {
+            display: none;
+        }
+
+        /* 懸停時顯示英文文字 */
+        .nav-item:hover .nav-item-en {
+            display: inline;
+            color: black;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        /* 隱藏中文文字 */
+        .nav-item:hover .nav-item-cn {
+            display: none;
+        }
+
+        .swiper-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .swiper-slide {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            display: inline-block;
+            margin: 0 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: chocolate;
+        }
+
+        /* 左右箭頭樣式調整 */
+        .swiper-button-next,
+        .swiper-button-prev {
+            font-size: 16px;
+            /* 設置字體大小，根據需要調整 */
+            width: 60px;
+            /* 箭頭寬度 */
+            height: 60px;
+            /* 箭頭高度 */
+            line-height: 30px;
+            /* 設置行高，使箭頭垂直居中 */
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.5);
+            /* 設置箭頭背景色，這裡使用半透明黑色 */
+            border: none;
+            /* 移除邊框 */
+            border-radius: 50%;
+            /* 圓角 */
+            top: 65%;
+            /* 設定箭頭上緣與父元素上緣的垂直距離 */
+            transform: translateY(-50%);
+            /* 使用 translateY 調整箭頭位置 */
+        }
+
+        /* 懸停時改變箭頭背景色 */
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background-color: white;
+        }
+
+        /* 右箭頭額外調整 */
+        .swiper-button-next {
+            right: 10px;
+            /* 右箭頭距離容器右側的距離 */
+        }
+
+        /* 左箭頭額外調整 */
+        .swiper-button-prev {
+            left: 10px;
+            /* 左箭頭距離容器左側的距離 */
+        }
+
+        footer {
+            background-color: black;
+            color: rgba(128, 128, 128, 0.743);
+            padding: 20px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .footer-section {
+            max-width: 350px;
+        }
+
+        .footer-section h2 {
+            font-size: 20px;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.743);
+            padding-bottom: 18px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0px;
+        }
+
+        .footer-section a {
+            text-decoration: none;
+            color: rgba(128, 128, 128, 0.743);
+            font-size: 14px;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-section img {
+            width: 45px;
+            /* 調整icon圖示的寬度，使其大小一致 */
+            height: 45px;
+            /* 調整icon圖示的高度，使其大小一致 */
+            margin-right: 1px;
+            /* 調整icon圖示和文字之間的間距 */
+            vertical-align: middle; 
+            /* 使圖示和文字在垂直方向上居中對齊 */
+        }
+
+        .popup-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            display: none;
+        }
+
+        .popup-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            padding: 20px; 
+        }
+
+        .close-btn-container {
+            position: absolute;
+            top: 5px;
+            z-index: 2;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            color: #fff;
+            font-weight: bold;
+            font-size: large;
+            background-color: #333; /* 背景顏色設定 */
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+
+        .popup-box img {
+            margin-top: 10px; 
+            width: 100%;
+            height: auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <a href="登入頁.html" class="login-button">登入</a>
+      </div>
+
+    <header>
+        <a href="首頁.html">
+            <img src="img/LOGO.png" alt="Logo" title="1nonly 巧克力專賣" style="max-width: 200px;">
+        </a>
+    </header>
+    
+    <nav>
+        <a href="品牌概念.html" class="nav-item">
+            <span class="nav-item-cn">品 牌 概 念</span>
+            <span class="nav-item-en">About Us</span>
+        </a>
+        <a href="商品頁_生巧克力.html" class="nav-item">
+            <span class="nav-item-cn">生 巧 克 力</span>
+            <span class="nav-item-en">Black Chocolate</span>
+                
+        </a>
+        <a href="商品頁_黑蛋糕.html" class="nav-item">
+            <span class="nav-item-cn">黑 蛋 糕</span>
+            <span class="nav-item-en">Black Cake</span>
+        </a>
+        <a href="商品頁_黑餅乾.html" class="nav-item">
+            <span class="nav-item-cn">黑 餅 乾</span>
+            <span class="nav-item-en">Black Cookie</span>
+        </a>
+        <a href="商品頁_靈魂搭配.html" class="nav-item">
+            <span class="nav-item-cn">靈 魂 搭 配</span>
+            <span class="nav-item-en">Soulmate</span>
+        </a>
+    </nav>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- 輪播頁面 1 -->
+            <div class="swiper-slide">
+                <img src="img/輪播1.jpg" alt="輪播圖片1">
+            </div>
+            <!-- 輪播頁面 2 -->
+            <div class="swiper-slide">
+                <img src="img/輪播2.jpg" alt="輪播圖片2">
+            </div>
+            <!-- 輪播頁面 3 -->
+            <div class="swiper-slide">
+                <img src="img/輪播3.jpg" alt="輪播圖片3">
+            </div>
+            <!-- 輪播頁面 4 -->
+            <div class="swiper-slide">
+                <img src="img/輪播4.jpg" alt="輪播圖片4">
+            </div>
+            <!-- 輪播頁面 5 -->
+            <div class="swiper-slide">
+                <img src="img/輪播5.jpg" alt="輪播圖片5">
+            </div>
+            <!-- 輪播頁面 6 -->
+            <div class="swiper-slide">
+                <img src="img/輪播6.jpg" alt="輪播圖片6">
+            </div>
+        </div>
+        <!-- 左右箭頭 -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- 分頁器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="popup-container" id="popupContainer">
+        <div class="popup-box">
+            <span class="close-btn" style="font-size: large;" onclick="closePopup()">X</span>
+            <img src="img/聖誕限定.jpg" alt="">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>Contact Us</h2>
+                <p style="font-weight: bold; color:rgba(196, 150, 0, 0.473)">1nonly 台中旗艦店</p>
+                <p>Addres: 台中市南屯區公益路二段51號18樓-#C室</p>
+                <p>E-mail: 1nonly@chocolatestore.com</p>
+                <p>Phone: 04-00000520</p>
+                <br>
+                <p>Copyright © 1nonly, inc. All Rights Reserved.</p>
+            </div>
+            <div class="footer-section">
+                <h2>Social Media</h2>
+                <ul>
+                    <li><img src="img/iconFbacebook.png" alt="Facebook"><a href="https://www.facebook.com/">Facebook</a></li>
+                    <li><img src="img/iconTwitter.png" alt="Twitter"><a href="https://twitter.com/home">Twitter</a></li>
+                    <li><img src="img/iconYoutube.png" alt="Youtube"><a href="https://www.youtube.com/">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入 Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- 初始化 Swiper -->
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: {
+                delay: 3000,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            slidesPerView: 1,
+        });
+        // 在網頁載入時執行函數-彈出訊息框
+        window.onload = function () {
+            openPopup();
+        };
+
+        // 開啟彈出訊息框
+        function openPopup() {
+            document.getElementById("popupContainer").style.display = "flex";
+        }
+
+        // 關閉彈出訊息框
+        function closePopup() {
+            document.getElementById("popupContainer").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

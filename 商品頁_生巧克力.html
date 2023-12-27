@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Product Page</title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow-x: hidden;
+        }
+
+        header {
+            color: #fff;
+            text-align: center;
+            padding: 50px 0;
+            animation: scaleFlicker 1s infinite alternate;
+        }
+
+        @keyframes scaleFlicker {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        header img {
+            width: 350px;
+            height: auto;
+            text-align: center;
+            max-width: 300px;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        header img:hover {
+            transform: scale(2.0);
+            filter: brightness(1.0);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 50px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: chocolate;
+        }
+
+        /* 預設顯示中文文字 */
+        .nav-item-en {
+        display: none;
+        }
+
+        /* 懸停時顯示英文文字 */
+        .nav-item:hover .nav-item-en {
+            display: inline;
+            color: black;
+            font-size: larger;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        /* 隱藏中文文字 */
+        .nav-item:hover .nav-item-cn {
+        display: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product-item {
+            width: 21%;
+            margin: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: scale(1.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-caption {
+            padding: 10px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        a:hover {
+            color: #bc6c21d6;
+        }
+
+        .product-item {
+            position: relative;
+            /* 新增這一行，以便標籤相對於商品項目進行定位 */
+        }
+
+        .best-seller {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color:brown;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .seasonal-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color:rgba(255, 255, 255, 0.911);
+            color: rgb(217, 126, 156);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: black;
+            color: rgba(128, 128, 128, 0.743);
+            padding: 20px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .footer-section {
+            max-width: 350px;
+        }
+
+        .footer-section h2 {
+            font-size: 20px;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.743);
+            padding-bottom: 18px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0px;
+        }
+
+        .footer-section a {
+            text-decoration: none;
+            color: rgba(128, 128, 128, 0.743);
+            font-size: 14px;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-section img {
+            width: 45px;
+            /* 調整icon圖示的寬度，使其大小一致 */
+            height: 45px;
+            /* 調整icon圖示的高度，使其大小一致 */
+            margin-right: 1px;
+            /* 調整icon圖示和文字之間的間距 */
+            vertical-align: middle; 
+            /* 使圖示和文字在垂直方向上居中對齊 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="首頁.html">
+        <img src="img/LOGO.png" alt="Logo" title="1nonly 巧克力專賣" style="max-width: 200px;">
+        </a>
+    </header>
+
+    <nav>
+    <a href="品牌概念.html" class="nav-item">
+        <span class="nav-item-cn">品 牌 概 念</span>
+        <span class="nav-item-en">About Us</span>
+    </a>
+    <a href="商品頁_生巧克力.html" class="nav-item">
+        <span class="nav-item-cn">生 巧 克 力</span>
+        <span class="nav-item-en">Black Chocolate</span>
+    </a>
+    <a href="商品頁_黑蛋糕.html" class="nav-item">
+        <span class="nav-item-cn">黑 蛋 糕</span>
+        <span class="nav-item-en">Black Cake</span>
+    </a>
+    <a href="商品頁_黑餅乾.html" class="nav-item">
+        <span class="nav-item-cn">黑 餅 乾</span>
+        <span class="nav-item-en">Black Cookie</span>
+    </a>
+    <a href="商品頁_靈魂搭配.html" class="nav-item">
+        <span class="nav-item-cn">靈 魂 搭 配</span>
+        <span class="nav-item-en">Soulmate</span>
+    </a>
+</nav>
+
+    <div class="product-container">
+        <!-- Product 1 -->
+        <div class="product-item">
+            <a href="商品內容頁.html">
+                <span class="best-seller">熱賣</span>
+                <img src="img/chocolate01.jpg" alt="Product 1" class="product-image">
+                <div class="product-caption">
+                    <h3>比利時生巧克力 65% (微甜) 25片</h3>
+                    <p>$358</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-item">
+            <a href="">
+                <span class="best-seller">熱賣</span>
+                <img src="img/chocolate02.png" alt="Product 2" class="product-image">
+                <div class="product-caption">
+                    <h3>比利時生巧克力 85% (微苦) 25片</h3>
+                    <p>$558</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-item">
+            <a href="">
+                <span class="seasonal-label">季節限定</span>
+                <img src="img/chocolate03.jpg" alt="Product 3" class="product-image">
+                <div class="product-caption">
+                    <h3>覆盆子生巧克力 25片</h3>
+                    <p>$458</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-item">
+            <a href="">
+                <img src="img/chocolate04.png" alt="Product 4" class="product-image">
+                <div class="product-caption">
+                    <h3>抹茶生巧克力 25片</h3>
+                    <p>$458</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>Contact Us</h2>
+                <p style="font-weight: bold; color:rgba(196, 150, 0, 0.473)">1nonly 台中旗艦店</p>
+                <p>Addres: 台中市南屯區公益路二段51號18樓-#C室</p>
+                <p>E-mail: 1nonly@chocolatestore.com</p>
+                <p>Phone: 04-00000520</p>
+                <br>
+                <p>Copyright © 1nonly, inc. All Rights Reserved.</p>
+            </div>
+            <div class="footer-section">
+                <h2>Social Media</h2>
+                <ul>
+                    <li><img src="img/iconFbacebook.png" alt="Facebook"><a href="https://www.facebook.com/">Facebook</a></li>
+                    <li><img src="img/iconTwitter.png" alt="Twitter"><a href="https://twitter.com/home">Twitter</a></li>
+                    <li><img src="img/iconYoutube.png" alt="Youtube"><a href="https://www.youtube.com/">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

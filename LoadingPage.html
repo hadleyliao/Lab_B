@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: pink;
+        }
+
+        #heart {
+            width: 400px;
+            height: 300px;
+            border: none;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .heart-part {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(235, 49, 167);
+            position: absolute;
+            animation: beat 0.5s linear infinite;
+            box-shadow: 0 0 40px rgb(235, 49, 167);
+        }
+
+        .heart-part.left,
+        .heart-part.right {
+            left: 30px;
+            border-radius: 50%;
+
+        }
+
+        .heart-part.right {
+            left: auto;
+            right: 30px;
+            transform: scaleX(-1);
+        }
+
+        .heart-part.bottom {
+            left: 50%;
+            margin-left: -100px;
+            bottom: 30px;
+            transform: rotate(45deg);
+        }
+
+        .like-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) scale(1.0);
+            font-size: 70px;
+            color: white;
+            animation: flash 1s linear infinite;
+        }
+
+        @keyframes flash {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes beat {
+            0% {
+                transform: scale(1) rotate(45deg);
+            }
+
+            50% {
+                transform: scale(1.2) rotate(45deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(45deg);
+            }
+        }
+
+    </style>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+        }
+        body{
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            height: 100vh;
+            margin:0;
+            background-image: url(img/goods_top_2clum_1.jpg);
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+        .login{
+            width: 450px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(
+                to right bottom,
+                rgba(255,255,255,.7),
+                rgba(255,255,255,.5),
+                rgba(255,255,255,.4)
+            );
+            backdrop-filter:blur(5px);
+            box-shadow: 0 0 40px #a29bfe;
+            border-radius: 40px;
+        }
+
+        .table{
+            font: 900 60px '';
+            text-align: center;
+            letter-spacing: 10px;
+            color:#3d3d3d;
+        }
+
+        .box{
+            overflow:hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box input{
+            width: 300px;
+            height: 100%;
+            margin-bottom: 20px;
+            outline: none;
+            border: 0;
+            padding: 10px;
+            background-color: transparent;
+            border-bottom: 3px solid rgb(150, 150, 240);
+            font: 900 20px '';
+        }
+
+        .go{
+            text-align:center;
+            display:block;
+            height: 24px;
+            padding: 12px;
+            font: 900 20px '';
+            border-radius: 30px;
+            margin-top: 30px;
+            color: #fff;
+            letter-spacing: 3px;
+            background-image: linear-gradient(to left,
+            #fd79a8,#a29bf6);
+        }
+    </style>
+    <title>Loading Page</title>
+</head>
+
+<body>
+    <div id="heart">
+        <!-- 這裡是 loading 頁面的內容 -->
+        <div class="heart-part left"></div>
+        <div class="heart-part right"></div>
+        <div class="heart-part bottom">
+            <div class="like-text">1nonly.</div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 顯示 loading 頁面
+            var heartContainer = document.getElementById("heart");
+            heartContainer.style.display = "flex"; // 或其他適當的 display 屬性
+
+            // 3 秒後將 loading 頁面隱藏，並導向到首頁
+            setTimeout(function () {
+                heartContainer.style.display = "none";
+                window.location.href = "首頁.html";
+            }, 4000);
+        });
+    </script>
+</body>
+
+</html>

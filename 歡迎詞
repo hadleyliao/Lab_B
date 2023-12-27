@@ -1,0 +1,8 @@
+// 在這裡添加 JavaScript 函數-歡迎詞
+        function welcomeMessage() {
+            alert(" ~ welcome 2 1nonly ~ ");
+            alert(" can I be ur sweetie???");
+            alert(" or... U can be my Honey???");
+            alert(" and... what do U say...Lovely... ♥");
+            alert(" YES!!! Let's go & have CHOCOLATE (๑´ڡ`๑)");
+        }

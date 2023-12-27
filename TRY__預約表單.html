@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>預約日期和時間表單</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>預約日期和時間</h2>
+    <form id="appointmentForm">
+        <label for="appointmentDate">選擇日期:</label>
+        <select id="appointmentDate" name="appointmentDate" required></select>
+
+        <label for="appointmentTime">選擇時間:</label>
+        <select id="appointmentTime" name="appointmentTime" required></select>
+
+        <input type="submit" value="提交">
+    </form>
+</div>
+
+<script>
+    var appointmentForm = document.getElementById('appointmentForm');
+    var appointmentDate = document.getElementById('appointmentDate');
+    var appointmentTime = document.getElementById('appointmentTime');
+
+    // 生成日期選項，一個月的日期
+    var today = new Date();
+    var endDate = new Date(today);
+    endDate.setMonth(today.getMonth() + 1);
+
+    while (today <= endDate) {
+        var formattedDate = today.toISOString().split('T')[0];
+        appointmentDate.options.add(new Option(formattedDate, formattedDate));
+        today.setDate(today.getDate() + 1);
+    }
+
+    // 生成時間選項
+    for (var hour = 9; hour <= 21; hour++) {
+        var formattedHour = hour < 10 ? '0' + hour : '' + hour;
+        var timeOption = formattedHour + ':00';
+        appointmentTime.options.add(new Option(timeOption, timeOption));
+    }
+
+    // 表單提交時的驗證
+    appointmentForm.addEventListener('submit', function (event) {
+        var selectedDate = new Date(appointmentDate.value);
+        var selectedTime = appointmentTime.value;
+
+        // 在此添加任何其他驗證邏輯
+
+        alert('預約日期: ' + selectedDate.toISOString().split('T')[0] + ' ' + selectedTime);
+        event.preventDefault();
+    });
+</script>
+
+</body>
+</html>
